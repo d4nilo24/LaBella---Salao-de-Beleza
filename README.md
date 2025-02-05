@@ -24,4 +24,8 @@ LaBella trata-se de um site dinâmico programado em C# (ASP.NET framework) integ
 Funcionária:     e-mail (fictício): leticiafernanda@gmail.com
                  senha: senhaA
 
+Cliente:         e-mail (fictícia): catarina.santos@hotmail.com
+                 senha: maça
+
+*Pode se cadastrar e testar as funcionalidades, a atualização no banco de dados é feita localmente, seus dados só serão acessados por você mesmo. 
 
