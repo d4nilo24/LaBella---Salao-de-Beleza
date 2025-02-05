@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ra_banner.aspx.cs" Inherits="prjTCC.ra_banner" %>

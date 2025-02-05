@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <title>La Bella</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <script src="https://kit.fontawesome.com/f9a95042e5.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="index.aspx">
+                <img src="imagens/logotipo.png" alt="logo do site">
+            </a>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="servicos.aspx">Serviços</a></li>
+                <li><a href="recompensas.aspx">Recompensas</a></li>
+            </ul>
+        </nav>
+
+        <div class="menu-sanduiche">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <div class="usuario-container">
+            <a href="conta_cliente.aspx">
+                <i class="fa-solid fa-circle-user"></i>
+            </a>
+        </div>
+
+        <div class="dropdown">
+            <ul>
+                <li><a href="servicos.aspx">Serviços</a></li>
+                <li><a href="recompensas.aspx">Recompensas</a></li>
+                <li><a href="conta_cliente.aspx"><div class="botoes">Minha conta</div></a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="container">
+        <div class="section-content-largura">
+            <div class="section-agendamento">
+                <h1>Agendamento de serviço</h1>
+                <h2 id="nome_servico">Serviço</h2>
+
+                <hr>
+
+                <div class="agendamento-servico">
+                    <div class="agendamento-servico-container">
+                        <!--<div class="agendamento-imagem">
+                            <img src="" id="img_servico_agendamento" alt="Imagem do serviço">
+                        </div>-->
+
+                        <div class="agendamento-info">
+                            <!--<h2 id="nome_servico" ></h2id="nome_servico">-->
+                            <h3 id="preco_servico"></h3>
+                            <div class="agendamento-duracao">
+                                <p><i class="fa-regular fa-clock"></i> em média <span id="duracao_servico"></span> min</p>
+                                <!--<button onclick="animar('.agendamento-filtro-container', '0')">Prosseguir</button>-->
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <h2>Selecione a data</h2>
+                <hr>
+
+                <div class="agendamento-filtro-container">
+                    <form>
+                        <p>
+                            <label for="data">Selecione a data que você deseja:</label>
+                            <input type="date" id="data_agendamento">
+                        </p>
+
+                        <p>
+                            <label for="name">
+                                Selecione o funcionário que você deseja (opcional):
+                            </label>
+                            <select name="funcionários" id="funcionario_servico">
+                                <option value="normal" selected>Selecione um funcionário:</option>
+                            </select>
+                        </p>
+                    </form>
+
+                    <div>
+                        <button onclick="listarHorarioFuncionario()">Aplicar</button>
+
+                    </div>
+                </div>
+
+                <h2>Funcionários</h2>
+                <hr>
+
+                <div class="agendamentos-funcionario suaveAnimar animar" id="agendamentos_funcionario">
+
+                </div>
+
+                <h2>Cupom de desconto</h2>
+                <hr>
+
+                <div class="formulario suaveAnimar animar">
+                    <p>
+                        <label for="cupom">Insira o cupom que deseja utilizar:</label>
+                        <select name="cupons" id="cupom">
+                            <option value="normal" selected>Selecione um de seus cupons:</option>
+                        </select>
+                        <button onclick="calcularCupom()">Aplicar</button>
+                        <div class="cls"></div>
+                    </p>
+
+                    <div class="info-agendamento-servico">
+                        <div class="info-preco-agendamento-servico">
+                            <h3 id="subtotal">Subtotal: R$ 150,96</h3>
+                            <h3 id="desconto">Desconto: 5%</h3>
+                            <hr>
+                            <h2 id="total">Total: R$ 143.41</h2>
+
+                            <div class="btns-agendamento-servico">
+                                <button class="btn-agendamento-servico" onclick="efetuarAgendamento()">Agendar</button>
+                            </div>
+                            <p id="aviso_erro"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="logo-container">
+                <a href="index.aspx">
+                    <img src="imagens/logotipo_branco.png">
+                </a>
+                <i class="fa-brands fa-whatsapp"></i>
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+
+            <div>
+                <h1>Onde nos encontrar</h1>
+
+                <ul>
+                   <li>Av. Antônio Emmerich, 90 - Vila Cascatinha, São Vicente - SP, 11390-160</li>
+                </ul>
+            </div>
+
+            <div>
+                <h1>Horário</h1>
+
+                <ul>
+                    <li>De terça a sábado das 9 às 18</li>
+                </ul>
+            </div>
+
+            <div class="footer-contato-container">
+                <h1>Contato</h1>
+
+                <ul>
+                    <li>(13) 99009-9625</li>
+                </ul>
+            </div>
+        </div>
+
+    </footer>
+    <div id="loading_spinner" class="loading_spinner">
+        <div class="spinner"></div>
+    </div>
+
+    <script type="text/javascript" src="js/agendamento.js"></script>
+    <script type="text/javascript" src="js/menu_sanduiche.js"></script>
+</body>
+</html>

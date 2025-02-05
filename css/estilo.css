@@ -1,0 +1,1839 @@
+* 
+{
+    border: 0; 
+    padding: 0; 
+    margin: 0; 
+    box-sizing: border-box; 
+    font-family: 'Open Sans', sans-serif;
+}
+
+::selection {
+    color: white;
+    background-color: #b36684;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #b36684;
+    border-radius: 3px;
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #8a4e66;
+    }
+
+.loading_spinner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+.spinner {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #b36684;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+}
+
+.btnDeletaImagem {
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    width: 20px;
+    padding: 1px;
+    background-color: #b00e0e;
+    cursor: pointer;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.aviso {
+    background-color: #fff;
+    border: 1px solid #b36684;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 7px;
+}
+
+
+html {scroll-behavior: smooth;}
+
+h1 {font-size: 20px; text-align: center;}
+
+h2 {font-size: 18px;} 
+
+h3 {font-size: 16px;}
+
+p {font-size: 15px;}
+
+.cls {clear: both;}
+
+.fr {float: right;}
+
+.centralizado{text-align:center}
+
+/*body
+{
+    background-color: #fff;
+    background-image: url("../imagens/Ativo 4.png");
+    background-position: 10vh 40vh;
+    background-repeat: no-repeat;
+}*/
+
+:root
+{
+    --tamanho-footer: 108px; /*13vh*/
+    --tamanho-header: 7vh;
+}
+
+/*** HEADER E ITENS DE MENU ***/
+
+a {text-decoration: none; color: inherit;}
+
+header  
+{
+    /*max-width: 1280px;*/ 
+    margin: auto; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
+    background-color: #fff;
+    height: var(--tamanho-header);
+    position:sticky;
+    top:0;
+    margin-top:0;
+    padding-top:0;
+    z-index: 10; 
+    box-shadow: 0 5px 7.5px -7.5px gray;
+}
+
+    header nav ul li 
+    {
+        list-style: none;
+        display: inline-flex;
+        padding: 0px 15px;
+        font-size: 16px;
+    }
+
+    header nav ul li a:hover 
+    {
+        transition: 0.3s;
+        color: #b36684;
+    }
+
+    .pagina-ativa {color: #b36684;}
+
+    .logo-container {width: 7%; cursor: pointer; padding: 15px; text-align: center;}
+        .logo-container img {width: 100%;}
+
+    .usuario-container {width: 5%; text-align: center;}
+        .usuario-container img {width: 100%;}
+        .usuario-container i {font-size: 25px; color: #b36684;}
+
+
+/*** SECTION (PÁGINA HOME) ***/
+
+section {width: 1280px; margin: auto;}
+
+.container {
+    /*min-height: calc(100vh - var(--tamanho-footer) - var(--tamanho-header));*/
+    overflow:auto;  
+    min-height: calc(100vh - var(--tamanho-footer) - var(--tamanho-header));
+}
+
+.container-404 {
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 7px;
+    line-height: 2;
+    display:flex;
+    align-items:center;
+}
+
+.div-404
+{
+    display:flex;
+    flex-direction:column;
+    align-items:center
+    
+}
+
+    .banner-container {width: 100%;}
+
+        .banner-container img {width: 100%; height: 500px; /*height: auto;*/ object-fit: cover;}   
+
+.aspas {font-size: 50px; color: #b36684;}
+
+/*.banner-container 
+{
+    background-image: url("../imagens/banner1.jpg"); 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 500px; 
+    background-size: cover;
+}*/
+
+
+/*** SERVIÇOS ***/
+
+section h1  
+{
+    color: #B36684;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#carrossel
+{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+
+.wrapper {width: inherit; margin-bottom:20px}
+
+#tipo_servicos_containers 
+{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc(100% / 6);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+     
+} 
+#tipo_servicos_containers .dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+  }
+  #tipo_servicos_containers .dragging .tipo_servicos_container {
+    cursor: grab;
+    user-select: none;
+  }
+  #tipo_servicos_containers::-webkit-scrollbar {
+    display: none;
+  }
+  #tipo_servicos_containers.no-transition {
+    scroll-behavior: auto;
+  }
+
+    .tipo_servicos_container 
+    {
+        display: block;
+        background-color: #EDE6E6; 
+        width: 170px;
+        padding: 10px;
+        text-align: center;
+        border-radius: 7px;
+        transition: transform 0.5s ease-in-out;
+        transform: translate(0);
+    }
+
+        .div_botoes_navegacao {font-size: 20px; width: 50px; height: 60px; display: flex; align-items: center; justify-content: center;}
+
+.botoes_navegacao {
+    width: 25px;
+    border-radius: 3px;
+    margin: auto;
+    padding: auto;
+    background-color: #B36684;
+    cursor: pointer;
+    display:flex;
+    justify-content:center;
+    color:#FFF;
+}
+
+        .tipo_servicos_container img {width: 60%;}
+
+/*** DEPOIMENTOS ***/
+
+.section-depoimentos 
+{
+    background-color: #E8D1DA; 
+    padding-bottom: 20px;
+}
+
+    .section-depoimentos p 
+    {
+        text-align: center; 
+        margin-top: -20px;
+    }
+    .section-depoimentos h1 
+    {
+        padding-top: 20px; 
+        color: #000;
+    }
+
+    .depoimentos 
+    {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+.depoimento-container {
+    background-color: #EDE6E6;
+    display: block;
+    width: 30%; 
+    padding: 10px;
+    text-align: center;
+    border-radius: 7px;
+    /*height: 350px;*/
+}
+
+    .depoimento-container p {
+        margin: 10px;
+        text-align: left;
+        overflow-wrap: break-word;
+    }
+
+    .estrelas-avaliativas 
+    {
+        display: flex;
+        justify-content: center;
+        gap: 3px;
+    }
+
+        .estrelas-avaliativas i, .estrelas-avaliativas-escolher i {
+            color: #fdcc0d;
+        }
+
+.estrelas-avaliativas-escolher {
+    display: flex;
+    justify-content: left;
+    gap: 3px;
+}
+        .fs {justify-content: flex-start;}
+
+/*** FOOTER ***/
+
+footer {
+    /*max-width: 1280px; */
+    /*padding-bottom: 10px; /*20px*/
+    margin: auto;
+    padding-top: 10px; /* 20px*/
+    background-color: #806E75;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    height: var(--tamanho-footer);
+}
+
+    .footer-container 
+    {
+        display: flex; 
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .footer-container h1 
+    {
+        margin-bottom: 5px;
+        text-align: left;
+    }
+
+    .footer-container h2 
+    {
+        margin-bottom: 10px;
+        text-align: left;
+    }
+
+    .footer-container ul li 
+    {
+        list-style: none;
+        font-size: 15px;
+    } 
+
+    .footer-container i {letter-spacing: 5px; font-size: 17px;}
+
+    .footer-contato-container {padding-right: 10px;}
+
+    .footer-contato-container .contato-icones{display:flex; justify-content:center;}
+
+
+/*.login-form-container 
+{
+    position: fixed; 
+    top: 50%; 
+    left: 50%;
+    left: calc(50% - 225px);
+    top: calc(50% - 150px);
+    background-color: #fff; 
+    width: 450px;
+    border-radius: 7px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}*/
+
+.login-cadastro-form-container {margin: 30px 0px 30px;}
+
+.login-form-container h1 
+{
+    color: #B36684; 
+    padding: 0; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+
+    .login-form 
+    {
+        width: 88%;
+        display: block;
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .login-form input 
+    {
+        border-radius: 7px; 
+        border: thin solid #a8a6a6bd; 
+        padding: 5px; width: 100%;
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+
+    .login-form label {font-size: 15px;}
+
+    .login-form button 
+    {
+        margin: 0; 
+        display: block; 
+        margin: auto; 
+        width: 100%;
+        font-size: 15px;
+    }
+
+    .login-form h4 
+    {
+        text-align: center; 
+        margin-top: 10px;
+        font-size: 15px;
+    }
+
+    .login-form a {color: #B36684;}
+
+    .login-form a:hover {text-decoration: underline;}
+
+    .fundo {width: 100%; height: 100%; position: fixed; top: 0; left: 0; backdrop-filter: blur(10px);}
+
+
+/*** PÁGINA CADASTRO ***/
+
+.login-cadastro-form-container 
+{
+    display: flex; 
+    justify-content: space-around; 
+    align-items: center;
+}
+
+.cadastro-form
+{
+    width: 500px;
+    display: block;
+    margin: auto;
+    margin-top: 6.5%;
+    margin-bottom: 6.5%
+}
+
+.login-recuepear-senha-form
+{
+    margin-top: 13.5%;
+    margin-bottom: 13.5%
+}
+
+.cadastro-form h1 
+{
+    color: #B36684; 
+    padding: 0; 
+    /*margin-top: 10px;*/
+    margin-bottom: 15px;
+}
+
+.cadastro-form input 
+    {
+        border-radius: 7px; 
+        border: thin solid #a8a6a6bd; 
+        padding: 5px; width: 100%;
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+
+    .cadastro-form label {font-size: 15px;}
+
+    .cadastro-form button 
+    {
+        margin: 0; 
+        display: block; 
+        margin: auto; 
+        width: 30%;
+        /*font-size: 15px;*/
+        float: right;
+    }
+
+    .cadastro-form h4 {text-align: center; font-weight: normal;}
+
+    .cadastro-form a {color: #B36684;}
+
+
+
+    #txtNome-cadastro {width: 33%; margin-right: 5px;}
+    #txtSobrenome-cadastro {width: 37%;}
+    #txtEmail-cadastro {width: 89.5%;}
+    #txtSenha-cadastro {width: 89.5%;}
+    #txtConfirmaSenha-cadastro {width: 73.5%;}
+    #txtCodigoVerificacao {width: 68.5%;}
+
+    #txtEmail-login {width: 89.5%;}
+    #txtSenha-login {width: 89.5%;}
+
+
+
+.form-cadastro input {width: 255px; margin-right: 15px; margin-top: 10px}
+
+
+/*** PÁGINA SERVIÇOS ***/
+
+.filtros-lista 
+{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc(100% / 10);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    /*gap: 15px;*/
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    /*display: flex; */
+    width: 100%; 
+    /*margin-left: 15px;*/
+}
+  .filtros-lista::-webkit-scrollbar {
+    display: none;
+  }
+
+#btnRadios
+{
+    display: flex;
+    justify-content: center;
+}
+
+.btnRadio
+{
+    margin: 3px;
+}
+
+.btnPreenchido
+{
+    background-color: #B36684;
+    width: 2.2vh;
+    height: 2.2vh;
+    border-radius: 50%;
+    border: #FFF;
+}
+.btnContorno
+{
+    width: 2.2vh;
+    height: 2.2vh;
+    border-radius: 50%;
+    border: 1px solid #B36684  ;
+}
+
+
+/*.filtros-lista input /*, .filtros-lista div {
+    background-color: #EDE6E6;
+    padding: 8px;
+    border-radius: 100px;
+    min-width: 125px;
+    text-align: center;
+    margin-right: 10px;
+}
+*/
+
+.filtros {
+    background-color: #EDE6E6;
+    padding: 8px;
+    border-radius: 100px;
+    min-width: 125px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.lista-servicos 
+{
+    display: flex; 
+    flex-wrap: wrap; 
+    align-items: center;
+    /*margin-left: 18px;*/
+    margin-bottom: 30px; 
+    //justify-content: center;
+}
+
+    .servico-container 
+    {
+        width: 300px; 
+        margin-top: 30px; 
+        margin-right: 15px;
+    }
+
+        .servico-imagem 
+        {
+            width: 300px; 
+            height: 250px;
+            /*background-image: url('../imagens/progressiva-semformol.jpg'); 
+            background-size: cover;*/
+        }
+
+            .servico-imagem img 
+            {
+                border-top-left-radius: 7px;
+                border-top-right-radius: 7px;
+                width: 100%; 
+                height: 100%;
+                object-fit: cover; 
+            }
+
+
+        .servico-container h2 {margin-top: 3px;}
+
+        .preco-tempo 
+        {
+            display: flex; 
+            justify-content: space-between;
+        }
+
+        .servico-container:hover
+        {
+            transition: 0.35s;
+            color: #b36684;
+            transform: scale(1.046);
+        }
+
+.imagem_erro {
+    width: 47vh;
+    margin: auto;
+    opacity: 0.6
+}
+
+.indice_itens {
+    display: flex;
+    justify-content: center;
+}
+
+.indice_itens_numero
+{
+    margin:10px;
+    display:flex;
+}
+
+.paginator
+{
+    background-color: #EDE6E6;
+    width: 20px;
+    border-radius: 50%;
+    margin: 12px;
+    display:flex;
+    justify-content:center;
+    color:#000
+}
+.paginator_selecionado {
+    width: 20px;
+    background-color: #b36684;
+    border-radius: 50%;
+    margin: 12px;
+    display:flex;
+    justify-content:center;
+    color:#FFF
+}
+
+
+/*-------------------------*/
+/*** PÁGINA SERVIÇOS_EXPANDIDO ***/
+.servico-expandido-container {
+    display: flex;
+    align-items: center;
+    /*margin-left: 15px;*/
+    justify-content: center;
+    margin-top: 20px;
+}
+
+    .servico-expandido-imagem 
+    {
+        //width: 40%;
+    }
+
+    .servico-expandido-imagem img 
+    {
+        /*height: 483px;
+        width: 483px;*/
+        height: 380px;
+        width: 380px;
+        //width: 100%;
+        margin: auto;
+        object-fit: cover;
+        border-radius: 7px;
+    }
+    
+    .servico-expandido-info-container 
+    {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: start;
+    }
+
+        .servico-expandido-info-container div 
+        {
+            margin-right: 20px; 
+            padding-left: 20px;
+            padding-top: 10px;
+        }
+
+        .servico-expandido-info-container h1 
+        {
+            font-size: 20px;
+            margin: 0;
+            text-align: left;
+            color: #000;
+        }
+
+        .servico-expandido-info-container h2
+        {
+            margin: 0;
+            text-align: left;   
+            font-weight: normal;
+        }
+        .servico-expandido-descricao { padding: 20px;}
+
+        .servico-expandido-descricao h3 
+        {
+            margin-bottom: 5px;
+            text-align: left;   
+        }
+
+button /*,  .servico-expandido-dados-container input, .div_botao, .dropdown li input
+*/ 
+{
+    padding: 9px;
+    border-radius: 7px;
+    color: #fff;
+    width: 150px;
+    margin-top: 15px;
+    background-color: #B36684;
+    cursor: pointer;
+    height:36px;
+}
+    button:disabled, input[type=submit]:disabled {
+        background-color: #bd869b;
+    }
+.botaoSelecionado {
+    background-color: #FFF;
+    border: solid 1.5px #B36684;
+    height: 36px;
+    color: #B36684
+}
+.botoes {
+    padding: 9px;
+    border-radius: 7px;
+    color: #fff;
+    width: 150px;
+    /*margin-top: 15px;*/
+    background-color: #B36684;
+    cursor: pointer;
+    margin-top:10px;
+    text-align:center;
+}
+
+.div_botao {
+    text-align: center;
+}
+
+.avaliacoes-container 
+{
+    margin-top: 20px; 
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+    .info-avaliador-container 
+    {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 30%;
+        margin-left: 15px;
+    }
+
+    .avaliacao-container {width: 70%;}
+
+    .avaliador-icone {width: 12%;}
+
+    .avaliador-icone i {font-size: 40px;}
+
+    .info-avaliador {width: 85%;}
+
+    .info-funcionario {margin-top: 10px;}
+
+hr 
+{
+    width: 100%; 
+    height: 1px; 
+    background-color: #a8a6a6bd; 
+    margin-top: 5px;
+}   
+
+
+/*** PÁGINA AGENDAMENTO_SERVIÇO ***/
+
+.section-agendamento 
+{
+    /*margin-right: 15px;
+    margin-left: 15px;
+    margin-bottom: 30px;*/
+    width:1024px;
+    margin:auto;
+}
+
+.section-agendamento h2 { margin-top: 15px;}
+
+.section-agendamento p {margin-top: 15px;}
+
+    .agendamento-servico
+    {
+        display: flex; 
+        align-items: center; 
+        justify-content: space-between; 
+        margin-top: 15px;
+    }
+
+        .agendamento-servico-container
+        {
+            display: flex;
+            align-items: center;
+            width: 85%;
+        }
+
+            .agendamento-imagem {width: 16%; margin-right: 15px}
+
+            .agendamento-imagem img 
+            {
+                width: 100%; 
+                height: 186px;
+                border-radius: 7px; 
+                object-fit: cover; 
+            }
+
+            .agendamento-info {width: 80%;}
+
+            .agendamento-duracao {/*text-align: right;*/}
+
+        .agendamento-filtro-container {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            /*flex-direction: column;*/
+        }
+
+        .agendamneto-funcionario-horario-container 
+        {
+            display: flex; 
+            flex-wrap: wrap; 
+           
+            flex-direction:column;
+            margin-top: 15px;
+        }
+
+.suaveAnimar {
+    transition: height 0.5s ease-in-out;
+}
+
+            .agendamento-funcionario-imagem {width: fit-content; margin-right: 10px; display:flex; align-items:center}
+
+            .agendamento-funcionario-imagem img 
+            {
+                width: 50px; 
+                height: 50px; 
+                object-fit: cover; 
+                border-radius: 100%;
+            }
+
+            .agendamento-nome-funcionario {width: unset; margin: 10px;}
+
+            .agendamento-horarios-funcionario {display: inline-flex;}
+            
+            .agendamento-horarios-funcionario button {margin-right: 20px;}
+
+        .formulario {width: 100%; margin-top: 15px; }
+
+            .formulario p {margin-top: 15px;}
+
+            .formulario input, select 
+            {
+                border-radius: 7px; 
+                border: thin solid #a8a6a6bd; 
+                padding: 5px;
+            }
+
+        .info-agendamento-servico 
+        {
+            display: flex; 
+            justify-content: flex-end; 
+            width: 100%; 
+            text-align: right;
+        }
+
+            .info-agendamento-servico
+
+            .info-preco-agendamento-servico {width: 26%;}
+
+            .btns-agendamento-servico {display: flex; justify-content: flex-end;}
+
+.btnCancelar {
+    background-color: #b00e0e;
+    width: auto;
+}
+
+            .btn-cancelar {background-color: #D9D9D9; color: #000 }
+
+
+/*** PÁGINA RECOMPENSAS ***/    
+
+.recompensa-container 
+{
+    width: 300px; 
+    margin-top: 30px; 
+    margin-right: 15px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 7px;
+}
+
+.recompensa-imagem, .banner-imagem {
+    /*width: 300px;*/
+    width: 100%;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    margin-bottom: 10px;
+}
+
+        .recompensa-imagem img 
+        {
+            height: 100%;
+            width:100%;
+        }
+
+        .banner-imagem img {
+            max-height: 200px;
+            max-width: 100%;
+        }
+
+        .recompensa-container h2 {margin-bottom: 5px}
+
+        .recompensa-container h3 
+        {
+            color: #B36684;
+            margin-bottom: 5px
+        }
+
+        .recompensa-container p {font-size: 15px; margin-bottom: 10px;}
+
+        .recompensa-container h4 
+        {
+            text-align: right; 
+            font-size: 14px; 
+            color:#606060; 
+            margin-bottom: 10px;
+        }
+
+        .recompensa-container input
+        {
+            width: 100%;
+            display: block;
+            margin: auto;
+        }
+
+.recompensa-container-informacoes
+{
+    padding:10px;
+}
+.recompensa-container-informacoes-textos
+{
+    height:85%;
+}
+
+.recompensa-resgatar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+.recompensa-resgatar-container {
+    display: flex;
+    align-items: center;
+    width: 85%;
+}
+.recompensa-resgatar h3 {
+    color: #B36684;
+}
+
+/*** MINHA CONTA_DADOS CADASTRAIS & ALTERAR_SENHA(PÁGINA) ***/
+.info-conta-container {
+    width: 1280px;
+    margin: 30px auto;
+}
+
+    .info-conta-container-flex 
+    {
+        display: flex; 
+        justify-content: center;
+    }
+
+    .itens-menu-conta {width: 300px;}
+
+        .ola-nome-cliente 
+        {
+            display: flex; 
+            width: 100%; 
+            align-items: center; 
+            margin-bottom: 10px;
+        }
+
+        .ola-nome-cliente div i {font-size: 30px; margin-right: 10px;}
+
+        .ola-nome-cliente div h2 {font-weight: normal;}
+
+        .itens-menu-conta ul {list-style: none;}
+
+        .itens-menu-conta ul li {margin-top: 15px; font-size: 16px;}  
+        
+    .menu-conta {width: 600px;}
+
+        .form-dados-cadastrais 
+        {
+            width: 100%;
+            display: block;
+            margin: auto;
+            /*margin-top: 20px;*/
+            /*margin-bottom: 20px;*/
+        }
+
+            .form-dados-cadastrais input 
+            {
+                border-radius: 7px; 
+                //border: thin solid #a8a6a6bd; 
+                padding: 5px; width: 100%;
+                margin-bottom: 10px;
+                font-size: 15px;
+            }
+
+.inputs {
+    border-radius: 7px;
+    border: thin solid #a8a6a6bd;
+    padding: 5px;
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+            .form-dados-cadastrais button
+            {
+                float: right;
+                margin: 0;
+            }
+
+            .form-dados-cadastrais h1
+            { 
+                color: #000; 
+                padding: 0; 
+                margin: 0;
+                margin-bottom: 10px;
+                text-align: left;
+            }
+
+            .form-dados-cadastrais h2 {text-align: left; margin-bottom: 10px;}
+
+
+            .form-dados-cadastrais {font-size: 15px;}
+
+/*** AGENDAMENTOS ***/
+
+.filtros-lista-conta
+{
+    display: flex; 
+    width: 100%; 
+}
+
+    .filtros-lista-conta div 
+    {
+        padding: 8px; 
+        border-radius: 100px; 
+        min-width: 125px; 
+        text-align: center;
+        margin-right: 10px;
+    }
+
+.botaoAtivo {
+    background-color: #b36684;
+    color: #fff;
+}
+
+.filtros-lista-contadivs {
+    /*background-color: #EDE6E6;*/
+    padding: 8px;
+    border-radius: 100px;
+    min-width: 125px;
+    text-align: center;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.div_pontos {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    margin: 10px;
+    color: #B36684
+}
+
+.menu-conta-agendamentos {
+    overflow-y: auto;
+    height: 570px;
+}
+
+.agendamentos-container {
+    border: 1px solid #a8a6a6bd;
+    margin-top: 15px;
+    align-items: center;
+    border-radius: 7px;
+    display: flex;
+}
+
+.agendamentos-foto-servico {width: 80px; height: 100%; margin-bottom: -5px;}
+
+    .agendamentos-foto-servico img
+    {
+        object-fit: cover; 
+        width: 86px; 
+        height: 96px; 
+        border-top-left-radius: 7px; 
+        border-bottom-left-radius: 7px;
+    }
+
+.dados-agendamentos-servico-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    // padding: 10px;
+    padding: 15px;
+}
+
+    .dados-agendamentos-servico-container h3 {font-size: 15px;}
+
+    .dados-agendamentos-servico-container p {font-size: 15px;}
+
+    .dados-agendamentos-servico-container h2 {font-size: 16px;}
+
+    .situacao-agendamentos-servico {text-align: right;} 
+
+
+/** AGENDAMENTOS_MAIS_DETALHES **/
+
+.agendamentos-detalhes-container 
+{
+    margin-top: 15px; 
+    margin-bottom:15px;
+    align-items: center; 
+    display: flex;  
+}
+
+.agendamentos-detalhes-foto-servico {width: 200px; height: 150px;}
+
+    .agendamentos-detalhes-foto-servico img
+    {
+        object-fit: cover; 
+        width: 100%; 
+        height: 100%; 
+        border-radius: 7px; 
+    }
+
+table 
+{
+    width: 100%; 
+    border-radius: 7px;
+}
+
+table tbody tr td {font-size: 15px;}
+
+thead {text-align: center; background-color: #f1f1f1}
+
+tbody, thead {width: 100%;}
+
+.menu-conta h2 {margin-top: 4px;}
+
+.menu-conta h3 {margin-top: 10px;}
+
+.tblInfoAgendamento {
+    border-collapse: collapse;
+    width: 100%;
+    margin: auto;
+}
+
+.thRadiusRight {
+    border-top-left-radius: 5px;
+}
+
+.thRadiusLeft {
+    border-top-right-radius: 5px;
+}
+
+.tblInfoAgendamento thead th {
+    background-color: #b36684;
+    color: #fff;
+    padding: 5px;
+}
+
+.tblInfoAgendamento tbody td {
+    text-align: left;
+    padding: 4px;
+    border: 1px solid #a8a6a6bd;
+}
+
+.tabelas {
+    border-collapse: collapse;
+    width: 100%;
+    margin: auto;
+    margin-top: 10px;
+    
+}
+
+    .tabelas tbody th {
+        background-color: #b36684;
+        color: #fff;
+        padding: 10px;
+
+    }
+
+    .tabelas tbody td {
+        height: 10px;
+        text-align: center;
+        padding: 5px;
+        border: 1px solid #a8a6a6bd;
+        overflow-wrap: anywhere;
+    }
+
+    .tabelas tbody button {
+        height: 30px;
+        width: 30px;
+        border-radius: 4px;
+        color: #fff;
+        background-color: #b36684;
+        font-size: 20px;
+    }
+
+
+/** RECOMPENSAS_CONTA **/
+
+.recompensa-conta-container 
+{
+    border: 1px solid #a8a6a6bd; 
+    margin-top: 15px; 
+    align-items: center; 
+    border-radius: 7px; 
+    display: flex;
+}
+
+.recompensa-conta-container-foto 
+{
+   width: 80px; 
+   height: 80px;
+   text-align: center;
+}
+
+.recompensa-conta-container-foto img
+{
+    /*width: 100%;*/
+    height: 100%;
+    /*object-fit: cover;*/ 
+    border-top-left-radius: 7px; 
+    border-bottom-left-radius: 7px;
+}
+
+.dados-recompensas-conta-container
+{
+    display: flex; 
+    justify-content: space-between; 
+    width: 100%; 
+    padding: 10px;
+    align-items: center;
+}
+
+.dados-recompensas-conta-container div h3 {margin-top: 7px;}
+
+.situacao-recompensa {text-align: right;}
+
+.retirada-recompensa-container {
+    background-color: #fff;
+    width: 300px;
+    padding: 10px;
+    border-radius: 7px;
+    border: 1px solid #a8a6a6bd;
+    margin-top: 15px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.recompensaImg {
+    height: 150px;
+    display: block;
+    margin: auto;
+}
+.btn_confirmar
+{
+    float:right;
+    margin-bottom: 20px
+}
+
+.btn100 {
+    width: 100%
+}
+
+/** AVALIACAO (HTML) **/
+
+.avaliacao-section {padding: 15px; width: 60%; margin: auto;}
+
+textarea 
+{
+    width: 100%;    
+    border-radius: 7px; 
+    border: 1px solid #a8a6a6bd; 
+    padding: 7px;
+}
+textarea {
+    resize: none
+}
+
+.avaliacao-section p {margin-bottom: 15px;}
+
+.avaliacao-section h3 {margin-bottom: 5px;}
+
+
+/*DROPDOWN_MENU**/
+
+.dropdown {
+    position: absolute;
+    /*right: 2rem;*/
+    top: 60px;
+    height: 0;
+    /*width: 300px;*/
+    width: 100%;
+    background-color: #fff;
+    /*backdrop-filter: blur(15px);*/
+    border-radius: 7px;
+    overflow: hidden;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.menu-sanduiche 
+{
+    width: 10%; 
+    text-align: center; 
+    display: none; 
+}
+
+.dropdown.aberto {
+    height: 160px;
+}
+
+.dropdown li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown li button {margin: unset;}
+
+/** ESQUECI_SENHA **/
+
+#txtEmail-esqueci {width: 100%;}
+
+.erro {
+    color: #f72a2a;
+}
+
+.acerto {
+    color: #029202;
+}
+
+/*******MEDIA QUERIES*******/
+
+/*desktops - higher resolution*/
+@media (min-width: 1600px)
+{
+    /** HOME **/
+    section {width: 100%;}
+    .section-content-largura {width: 1400px; margin: auto;}
+    .depoimento {width: 100%;}
+    .tipo_servicos_containers {width: 80%;}
+
+    /** SERVIÇOS **/
+
+    /** SERVIÇOS_EXPANDIDO **/
+
+    .servico-expandido-dados-container { width: 30%; }
+
+    /** AGENDAMENTO_SERVICO **/
+
+    .btns-agendamento-servico button {width: 170px;}
+
+    /** ESQUECI_SENHA **/
+}
+
+/*laptops, desktops*/
+@media (min-width: 1025px) and (max-width: 1599px) 
+{
+    /** HOME **/
+    section {width: 100%;}
+    .section-content-largura {width: 100%; margin: auto;}
+    .depoimento {width: 100%;}
+    .tipo_servicos_container {width:  80%;}
+
+    .logo-container {width: 10%;}
+    /*.banner-container {max-height: 320px;}*/
+
+    /** SERVIÇOS **/
+    .filtros-lista {gap: 10px; margin-left: 9px;}
+    .lista-servicos { margin-left: 10px;}
+
+    /** SERVIÇOS_EXPANDIDO **/
+
+    .servico-expandido-dados-container { width: 40%; }
+    .servico-expandido-imagem img {height: 380px;}
+
+    /** CONTA_CLIENTE **/
+
+    .info-conta-container {width: 100%;}
+}
+
+/*tablets, ipads (portrait)*/
+@media (min-width: 768px) and (max-width: 1024px)
+{
+    /** HOME **/
+    :root {
+        --tamanho-footer: 140px;
+    }
+
+    header {width: 100%}
+
+    section {width: 100%;}
+        .section-content-largura {width: 95%; margin: auto;}
+
+    .section-agendamento {
+        width: 100%;
+    }
+
+    .tipo_servicos_container {width: 80%;}    
+
+    /*footer {width: 100%; height: unset;}
+    */
+    .logo-container {
+        width: 15%;
+    }
+
+    /*.banner-container {height: 260px;}*/
+
+    /** SERVIÇOS **/
+
+    #tipo_servicos_containers
+    {
+        grid-auto-columns: calc(100% / 4);
+    }
+
+    /** SERVIÇOS_EXPANDIDO **/
+
+    .servico-expandido-dados-container { width: 43%; }
+    .servico-expandido-imagem img {height: 440px;}
+    
+    .div_botoes_navegacao{display: none;}
+
+    .footer-container h1{ text-align: center;}
+    .footer-container div{ margin: 10px;}
+
+    /** AGENDAMENTO_SERVICO **/
+
+    .agendamento-imagem {width: 25%; margin-right: 16px;}
+
+    .agendamento-imagem img { width: 100%; height: 187px; }
+
+    .info-agendamento-servico .info-preco-agendamento-servico {width: 33%;}
+
+    .agendamento-nome-funcionario {width: unset;}
+
+        .agendamento-funcionario-imagem {width: fit-content; margin-right: 10px;}
+
+        .agendamento-funcionario-imagem img {width: 50px;}
+
+    /** CONTA_CLIENTE **/
+
+    .info-conta-container {width: 100%;}
+
+    .filtros-lista{grid-auto-columns: calc(100% / 5);}
+}
+
+
+/*tablets, ipads (portrait)*/
+@media (min-width: 768px) and (max-width: 912px) and (orientation: portrait)
+{
+    /** HOME **/
+    /*.banner-container {height: 240px;}*/
+
+    /** AGENDAMENTO_SERVICO **/
+
+    .agendamento-nome-funcionario {width: unset;}
+
+        .agendamento-funcionario-imagem {width: fit-content; margin-right: 10px;}
+
+        .agendamento-funcionario-imagem img {width: 50px;}
+
+    .section-agendamento {
+        width: 100%;
+    }
+
+    .agendamento-horarios-funcionario {flex-wrap: wrap;}
+
+    .agendamento-info {width: unset;}
+
+    .agendamento-duracao {width: unset;}
+
+    .depoimento-container {/*height: 510px;*/}
+
+    /** CONTA **/
+
+    .itens-menu-conta {width: 20%;}
+
+      /** AGENDAMENTO_SERVICO **/
+
+      .agendamento-funcionario-imagem {width: fit-content;}
+}
+
+
+/*tablets, ipads (landscape)*/
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape)
+{
+    /** HOME **/
+
+    header {height: unset;}
+
+    .depoimento-container {/*height: 390px;*/}
+
+    /*.banner-container {height: 260px;}*/
+
+    /** RECOMPENSAS **/
+
+    .section-agendamento {
+        width: 100%;
+    }
+
+    .recompensa-container {width: 40%;}
+
+    .lista-servicos {justify-content: space-evenly;}
+
+    .div_botoes_navegacao{display: none;}
+
+    .footer-container h1{ text-align: center;}
+    .footer-container div{ margin: 10px;}
+
+    .info-conta-container {width: 95%;}
+
+    /** AGENDAMENTO_SERVICO **/
+
+    .agendamento-horarios-funcionario {flex-wrap: wrap;}
+
+    .servico-expandido-imagem img {height: auto;}
+    
+}
+
+
+/*low resolution tablets, mobiles (landscape)*/
+@media (min-width: 481px) and (max-width: 767px)
+{
+    /** HOME **/
+    :root {
+        --tamanho-footer: 360px;
+    }
+
+    header {width: 100%; height: auto;}
+
+    section {width: 100%;}
+        .section-content-largura {width: 95%; margin: auto;}
+        .depoimento {width: 100%;}
+        .depoimentos { flex-direction: column;}
+    .depoimento-container { width: 90%;
+        margin-bottom: 15px;
+    }
+
+    .section-agendamento {
+        width: 100%;
+    }
+
+    .tipo_servicos_container {width: 100%;}
+
+    /*footer {width: 100%; height: unset;}*/
+        .logo-container {width: 25%;}
+        .footer-container {flex-direction: column;}
+
+    /*.banner-container {max-height: 160px;}*/
+
+    /** SERVIÇOS **/
+
+    .lista-servicos {justify-content: space-between;}
+
+    #tipo_servicos_containers {grid-auto-columns: calc(100% / 3);}
+
+    .filtros-lista{grid-auto-columns: calc(100% / 3);}
+
+    .div_botoes_navegacao {display: none;}
+
+    .footer-container h1 {text-align: center;}
+    .footer-container div {margin: 10px;}
+
+    /** RECOMPENSAS **/
+
+    .lista-servicos {justify-content: space-evenly;}
+
+    /** SERVICO_EXPANDIDO **/
+
+    .info-avaliador-container {width: 55%;}
+
+    /** CADASTRO **/
+
+    .login-cadastro-form-container {flex-direction: column;}
+
+    /** AGENDAMENTO_SERVICO **/
+
+    .agendamento-nome-funcionario {width: unset;}
+
+    .agendamento-funcionario-imagem {width: fit-content; margin-right: 10px;}
+
+    .agendamento-horarios-funcionario {flex-wrap: wrap;}
+
+    .agendamento-imagem {width: 40%; margin-right: 10px;}
+
+        .agendamento-imagem img {height: auto;}
+
+    .agendamento-duracao {width: unset;}
+
+    /** SERVICO_EXPANDIDO **/
+
+    .servico-expandido-container {flex-wrap: wrap;}
+
+    .servico-expandido-imagem { width: 100%;}
+
+        .servico-expandido-imagem img { height: 513px;}
+
+    .avaliador-icone {width: 100%;}
+    
+    .avsio{
+        width:70%;
+    }
+}
+
+/*smartphones mobiles (portrait)*/
+@media (min-width: 280px) and (max-width: 480px)
+{
+    /** HOME **/
+    :root {
+        --tamanho-footer: 360px
+    }
+
+    header {
+        width: 100%;
+    }
+        .usuario-container {display: none;}
+        nav {display: none;}
+        .menu-sanduiche {display: block;}
+        .dropdown {/*left: 2rem;*/ width: 100%; top: 45px;}
+        .logo-container {width: 35%;}
+
+    section {width: 100%;}
+        .section-content-largura {width: 95%; margin: auto;}
+        .depoimento {width: 100%;}
+        .depoimentos { flex-direction: column;}
+        .depoimento-container { width: 90%; margin-bottom: 15px; /*height: 400px;*/}
+
+    .section-agendamento {
+        width: 100%;
+    }
+
+    /*footer {width: 100%; height: unset;}*/
+        .footer-container {flex-direction: column;}
+
+    /*.banner-container {background-image: url('../imagens/banner_celular.jpg');}*/
+
+    /** SERVIÇOS **/
+
+    /** SERVICO_EXPANDIDO **/
+
+    .servico-expandido-container {flex-wrap: wrap;}
+
+        .servico-expandido-imagem img {width: 100%;}
+
+        .servico-expandido-descricao {padding-left: 15px; margin-top: 15px; padding-right: 15px;}
+
+        .servico-expandido-info-container div {margin-right: unset;}
+
+    .servico-expandido-dados-container input {float: right;}
+
+    .avaliacao-container {width: 90%; margin-top: 10px;}
+
+    .info-avaliador-container {width: 95%;}
+
+
+    /** RECOMPENSAS **/
+
+    .lista-servicos { justify-content: center;}
+
+    #tipo_servicos_containers
+    {
+        grid-auto-columns: calc(100% / 2);
+    }
+    
+    .filtros-lista{grid-auto-columns: calc(100% / 3); margin: unset;}
+    
+    .div_botoes_navegacao{display: none;}
+
+    .footer-container h1{ text-align: center; }
+    .footer-container div{ margin: 10px;}
+
+    /** CADASTRO **/
+
+    .login-cadastro-form-container {flex-direction: column;}
+
+    .cadastro-form {padding-left: 15px; padding-right: 15px; width: 100%;}
+
+    #txtNome-cadastro {width: 100%; margin-right: unset;}
+    #txtSobrenome-cadastro {width: 100%;}
+    #txtEmail-cadastro {width: 100%;}
+    #txtSenha-cadastro {width: 100%;}
+    #txtConfirmaSenha-cadastro {width: 100%;}
+    #txtCodigoVerificacao {width: 100%;}
+
+    #txtEmail-login {width: 100%;}
+    #txtSenha-login {width: 100%;}
+
+    /** AVALIACAO **/
+
+    .avaliacoes-container {flex-wrap: wrap;}
+ 
+
+    .avaliacao-section {width: 100%;}
+
+    .avaliacao-section h1 {margin-top: 0px;}
+
+    /** AGENDAMENTO_SERVICO **/
+
+    .agendamento-funcionario-imagem {width:fit-content; margin-right: 10px;}
+
+        .agendamento-funcionario-imagem img {width: 50px;}
+
+        .agendamento-nome-funcionario {width: unset;}
+
+    .agendamento-horarios-funcionario 
+    {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .agendamento-servico { flex-direction: column;}
+    .recompensa-resgatar {flex-direction:column}
+
+        .agendamento-servico-container { width: 100%;}
+        .recompensa-resgatar-container{width:100%}
+
+        .agendamento-imagem {width: 45%;}
+
+            .agendamento-imagem img {height: auto;}
+
+            .agendamento-duracao {width: unset;}
+
+    .agendamento-filtro-container {flex-direction: column;}
+
+    .info-agendamento-servico .info-preco-agendamento-servico {width: 44%;}
+
+    .agendamento-horarios-funcionario button {margin-right: unset; }
+
+    .agendamentos-foto-servico img {
+        height: 116px;
+
+    }
+
+    /** CONTA_CLIENTE **/
+
+    .form-dados-cadastrais { width: 95%;}
+
+    /** AGENDAMENTOS **/
+
+    .info-conta-container {width: 100%;}
+
+        .info-conta-container-flex {flex-direction: column;}
+
+        .agendamentos-container {width: 100%;}
+
+        .menu-conta {width: 100%; padding: 5px;}
+
+        .dados-agendamentos-servico-container p {font-size: 14px;}
+
+    .itens-menu-conta {width: 100%; margin: 0px auto 20px;}
+
+    .ola-nome-cliente {justify-content: center;}
+
+    .itens-menu-conta ul {text-align: center;}
+
+        .itens-menu-conta ul li {margin-top: 2px; padding: 10px; /*background-color: #f1f1f1;*/}
+
+   .filtros-lista {gap: 25px;}
+}

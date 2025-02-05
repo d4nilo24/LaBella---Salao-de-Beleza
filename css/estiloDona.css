@@ -1,0 +1,1068 @@
+﻿* {
+    border: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+::selection {
+    color: white;
+    background-color: #c4646e;
+}
+
+::-webkit-scrollbar {
+    width:5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #b36684;
+    border-radius: 3px;
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #8a4e66;
+    }
+
+.pnlListaImagens 
+{
+    display: flex;
+    overflow-x: auto;
+}
+
+/*.pnlImagens {
+    width: 19%;
+    padding: 10px;
+}*/
+
+.pnlImagensAdicionar {
+    width: 100%;
+    padding: 10px;
+}
+
+    .pnlImagens img, .pnlImagensAdicionar img {
+        width: 150px;
+        height: 126.89px;
+        object-fit: cover;
+    }
+
+.link-tabela {
+    width: 90%;
+    margin: 0px auto 10px;
+}
+
+.separa-inputs-agendamento {
+    display: flex;
+}
+
+    .separa-inputs-agendamento div {
+        flex: 1;
+        margin: 20px;
+    }
+
+.alinha-rbList {
+    margin-left: 20px;
+}
+
+.alinha-buttons {
+    margin-right: 20px;
+}
+
+
+a {text-decoration: none; color: #000}              
+
+    a:hover {text-decoration: underline;}
+
+.btnCancelamento {background-color: darkred;}
+
+h1 {
+    font-size: 20px;
+}
+
+h2 {
+    color: #b36684;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.logo-form {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+    .logo-form img {
+        display: block;
+        width: 15vh;
+        margin: auto;
+    }
+
+.usuario-container {
+    width: 130px;
+    text-align: center;
+}
+
+    .usuario-container img {
+        width: 100%;
+    }
+
+    .usuario-container i {
+        font-size: 25px;
+        color: #b36684;
+    }
+
+.usuario-container a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.inputs-separadas {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+    .inputs-separadas p {
+        width: -webkit-fill-available;
+    }
+
+/* HEADER */
+
+header {
+    height: 70px;
+    width: 100%;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    margin-top: 0;
+    padding-top: 0;
+    z-index: 10;
+    background-color:#FFF;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo-container {
+    width: 19vh;
+    cursor: pointer;
+    padding: 15px;
+    text-align: center;
+}
+
+    .logo-container img {
+        width: 100%;
+    }
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    flex-flow:row-reverse;
+}
+
+/* MENU LATERAL */
+
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #b36684;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+    .sidebar a {
+        display: flex;
+        color: #fff;
+        padding: 16px;
+        text-decoration: none;
+        font-size: 15px;
+        align-items:center;
+    }
+
+        .sidebar a.active {
+            background-color: #8a4e66;
+            /*text-decoration: underline;*/
+        }
+
+        .sidebar a:hover:not(.active) {
+            background-color: #8a4e66;
+            color: white;
+        }
+
+    /*div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+}*/
+
+    .sidebar img {
+        /*height: 30px;*/
+        width: 35px;
+        padding-right: 10px;
+    }
+
+/* ARTICLE */
+
+article {
+    margin-left: 15%;
+    /*width: 85%;
+    width: -webkit-fill-available;*/
+    width: 50%;
+    margin: auto;
+    padding: 15px;
+    margin-left: 30%;
+    margin-top: 20px;
+}
+
+    article h1 {
+        text-align: left;
+    }
+
+.tabelas {
+    border-collapse: collapse;
+    width: 90%;
+    margin: auto;
+}
+
+.thRadiusRight {
+    border-top-left-radius: 5px;
+}
+
+.thRadiusLeft {
+    border-top-right-radius: 5px;
+}
+
+.tabelas tbody th {
+    background-color: #b36684;
+    color: #fff;
+    padding: 10px;
+}
+
+.tabelas tbody td {
+    height: 10px;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #a8a6a6bd;
+    overflow-wrap: anywhere;
+}
+
+.tabelas tbody button {
+    height: 30px;
+    width: 30px;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #b36684;
+    font-size: 20px;
+}
+
+.esquerda {
+    text-align: left;
+}
+
+.itens-flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+}
+    .btnPesquisar {background-color: #d9d9d9; width: 60px;
+    }
+
+.filtra .btnAdicionar {
+    display: none;
+}
+
+/*.filtra input {
+    width: auto;
+}*/
+
+.filtra {width: 35%;}
+
+.btnAdicionar {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #b36684;
+    color: #fff;
+}
+
+input, textarea, select, textarea {
+    width: 100%;
+    border: 1px solid #a8a6a6bd;
+    border-radius: 5px;
+    padding: 4px;
+    margin-bottom: 5px;
+}
+textarea {
+    resize: none;
+}
+
+/*Tela de Agenda*/
+
+.divTabelaAgenda {
+    overflow-x: scroll;
+    max-width: 100%;
+    scroll-behavior: smooth;
+}
+
+    .divTabelaAgenda::-webkit-scrollbar {
+        display: none;
+    }
+
+#tblAgendamento td {
+    /*width: 50px; /* Defina a largura desejada para o td */
+    height: 60px; /* Defina a altura desejada para o td */
+    position: relative; /* Posicionamento relativo no td */
+    overflow-wrap:normal;
+}
+
+    #tblAgendamento td input {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+/*CHAT*/
+
+#tblAgendamento {
+    border-collapse: collapse;
+    width: 100%;
+    /* Defina a largura máxima da tabela conforme necessário */
+    margin: 0 auto;
+}
+
+    /* Estilo do cabeçalho da tabela */
+    #tblAgendamento th {
+        background-color: #b36684; /* Cor de fundo rosa */
+        color: #fff; /* Cor do texto branco */
+    }
+
+/* Estilo das linhas ímpares da tabela (para maior legibilidade) */
+#tblAgendamento tr:nth-child(odd) {
+    background-color: #fff; /* Cor de fundo branca */
+}
+
+/* Estilo das linhas pares da tabela */
+    #tblAgendamento tr:nth-child(even) {
+        /*background-color: #ffe6f0;*/ /* Cor de fundo rosa claro */
+    }
+
+/* Estilo das células da tabela */
+#tblAgendamento td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #e0e0e0; /* Borda cinza claro */
+
+}
+
+/* Estilo de foco ao passar o mouse sobre a linha da tabela */
+#tblAgendamento tr:hover {
+    // background-color: #ffc2e1; /* Cor de fundo rosa mais escura ao passar o mouse */
+}
+
+#tblAgendamento td:hover {
+   // background-color: #fab4d7; /* Cor de fundo rosa mais escura ao passar o mouse */
+}
+
+    /*Chat 2*/
+/*#tblAgendamento {
+    text-align: left;
+    position: relative;
+    border-collapse: collapse;
+    overflow:auto;
+}*/
+
+    #tblAgendamento thead {
+        position: sticky;
+        top: 70px;
+        z-index: 9;
+    }
+
+.tabelaDona thead {
+    position: relative !important;
+    top: 0 !important;
+}
+
+.linha_agenda {
+    color: #FFF;
+    border-right: 1px dashed #606060;
+    border-left: 1px dashed #000;
+    opacity: 0.8
+}
+
+/*Dona agenda dias*/
+.div_dias_dona_agenda {
+    display: flex;
+    justify-content: space-around;
+    width: 300px;
+    align-items: center;
+}
+
+
+.fixed-hora {
+    background-color: #b36684;
+    color: #fff;
+    width: 20px;
+    left: 0;
+    position: sticky !important;
+    z-index: 8;
+}
+
+.btn_horario {
+    color: #fff;
+    background-color: #b36684;
+    border-radius:10px;
+    z-index:1;
+}
+
+.btn_horario_desativado {
+    color: #808080;
+    background-color: #f7e1ea;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+    /*-------*/
+
+/*--------*/
+
+.divAgenda {
+    margin-left: 200px;
+}
+
+#pnlAgendaInformacoes input, #pnlAgendaInformacoes select {
+    width: 200px;
+    margin: 5px;
+}
+
+#pnlAgendaInformacoes
+{
+    margin:10px;
+}
+/*Fim Tela Agenda*/
+
+.rbList label {
+    display: inline-block;
+    margin-right: 10px; /* Espaçamento entre os radio buttons */
+}
+
+/* Estilo para o RadioButtonList (opcional) */
+.rbList {
+    margin-top: 10px; /* Espaçamento superior entre o RadioButtonList e outros elementos */
+}
+
+.rbList input {
+ width:auto; /* Espaçamento superior entre o RadioButtonList e outros elementos */
+}
+
+/** AGENDA **/
+
+.filtrar-funcionario {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 5px;
+}
+
+    .filtrar-funcionario select {
+        width: auto;
+    }
+
+/** EXPANDIDOS **/
+
+.titulo {
+    margin-bottom: 20px;
+}
+
+/** DONA_SERVICO_EXPANDIDO **/
+
+.dados-servico {
+    width: 73%;
+    margin: auto;
+    padding: 15px;
+    box-shadow: 0px 0px 2px 0px rgba(168, 168, 168, 0.5);
+    border-radius: 7px;
+    /*background-color: #ffebf3;*/
+    background-color: #ffebf438
+}
+
+.cls {
+    clear: both;
+}
+
+.fr {
+    float: right;
+}
+
+.botoes {
+    padding: 9px;
+    border-radius: 7px;
+    border: 0;
+    color: #fff;
+    width: 150px;
+    margin-top: 10px;
+    background-color: #B36684;
+    cursor: pointer;
+    text-align:center;
+}
+
+button:disabled, input[type=submit]:disabled {
+    background-color: #bd869b;
+}
+
+.excluir {
+    background-color: #e64747;
+    // width: fit-content;
+}
+
+.mais {
+    padding: 9px;
+    border-radius: 7px;
+    color: #fff;
+    background-color: #B36684;
+    cursor: pointer;
+    display:flex;
+    align-items:center;
+    text-align: center;
+
+}
+
+.btnAdicionar-container a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.txtFiltrar {width: 80%;}
+
+/** DONA_FUNCIONARIO_EXPANDIDO **/
+
+.filtros-lista {
+    display: flex;
+    width: 100%;
+    margin-bottom: 5px;
+    flex-wrap: wrap;
+}
+
+.filtros-lista-horario {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content:space-between;
+}
+
+.filtros-lista div {
+    background-color: #EDE6E6;
+    padding: 8px;
+    border-radius: 100px;
+    min-width: 125px;
+    text-align: center;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+.aviso {
+    border: 1px solid #b36684;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 7px;
+    overflow-y: auto;
+    max-height: 70%;
+    margin-bottom: 100px;
+    margin-top: 71.03px;
+    background-color: #FFF
+}
+.fundo {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(10px);
+}
+.dados-novo-horario
+{
+    width:20%;
+}
+.dados-novos-produtos{
+    width: 40%;
+}
+.novo_produto {
+    border: 1px solid #b36684;
+    border-radius:10px;
+    padding:10px;
+    margin:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+
+    .novo_produto div input, .novo_produto span input {
+        width: 50px !important;
+        margin: 10px;
+    }
+    .novo_produto div, .novo_produto span {
+        margin:auto;
+    }
+    
+    /** ADICIONAR FORM **/
+    .formAdicionar {
+        width: 100%;
+        margin: auto;
+        position: fixed;
+        top: 30vh;
+    }
+
+.box {
+    max-width: 500px;
+    margin: auto;
+    padding: 15px;
+    box-shadow: 0px 0px 2px 0px rgba(168, 168, 168, 0.5);
+    border-radius: 7px;
+    background-color: #ffebf3;
+}
+
+/* Tela de ADICIONAR HORÁRIO SERVIÇO */
+
+.horario_tag {
+    background-color: #EDE6E6;
+    padding: 8px;
+    border-radius: 100px;
+    width: 100px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 7px;
+}
+
+.div_horarios {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.div_horario {
+    background-color: #eddde3;
+    width:100%;
+    padding:10px;
+}
+
+.filtros-lista input {
+    background-color: #EDE6E6;
+    padding: 8px;
+    border-radius: 100px;
+    width: 125px;
+    text-align: center;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+.filtros-lista-horario .botao_filtro_horario {
+    background-color: #EDE6E6;
+    padding: 8px;
+    border-radius: 10px 10px 0 0;
+    width: 100px;
+    text-align: center;
+    margin:0;
+    padding:5px;
+    margin-top:10px;
+}
+
+.botaoAtivo {
+    background-color: #b36684 !important;
+    color: #fff;
+}
+
+.fechar_tag {
+    background-color: #757575;
+    width: 28px;
+    color: #fff;
+    border-radius: 50%;
+    margin: 0;
+    margin-left: 10px;
+}
+
+.dados-servico-embaixo {
+    margin-top: 20px
+}
+
+/** IMAGEM SERVICO**/
+
+.erro {
+    color: #f72a2a;
+}
+
+.acerto {
+    color: #029202;
+}
+
+.block {
+    display: block;
+}
+
+.pnlListaImagens {
+    display: flex;
+}
+
+.pnlImagens {
+    width: min-content;
+    padding: 10px;
+}
+
+.pnlImagensBanner {
+    max-width: 100%;
+    padding: 10px;
+}
+
+.pnlImagensBanner img {
+    max-width: 100%;
+    padding: 10px;
+}
+
+    .pnlImagens img {
+        /*width: 100%;  Defina uma largura máxima de 100% para as imagens */
+        height: 140px; /* Mantenha a proporção da imagem */
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+.btnDeletaImagem {
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    width: 20px;
+    padding: 1px;
+    background-color: #b00e0e;
+    cursor: pointer;
+}
+
+/* Media query para telas de 1024px a 2560px */
+@media screen and (min-width: 1024px) and (max-width: 2560px) {
+    .sidebar {
+        width: 250px;
+    }
+
+    article {
+        width: calc(100% - 250px);
+        margin-left: 250px;
+    }
+
+    .txtFiltrar {
+        width: 75%;
+    }
+}
+
+@media screen and (min-width: 1920px) and (max-width: 2560px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    article {
+        width: 70%;
+        margin-left: calc((100% - 60%) / 2);
+    }
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 1200px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+        .sidebar a {
+            float: left;
+        }
+
+    .logo-container {
+        width: 42vh;
+        /*margin: auto;*/
+    }
+
+    article {
+        width: 100%;
+        margin: unset;
+        margin-top: 15px;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    /** DADOS_SERVICO_EXPANDIDO **/
+
+    .logo-container {
+        width: 15vh;
+    }
+
+    .dados-servico {
+        width: 66%;
+    }
+
+    .logo-form img {
+        width: 20vw;
+    }
+
+    /** ADICIONAR **/
+
+    .logo-form img {
+        width: 13vw;
+    }
+
+
+    .formAdicionar {
+        position: unset;
+        margin: 25px auto;
+    }
+
+    /** dona_servicos && dona_funcionarios **/
+
+    .txtFiltrar {
+        width: 35vw
+    }
+
+    .filtra {
+        width: 45vw;
+    }
+    .divAgenda {
+        margin: auto;
+    }
+    .filtros-lista-horario {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: calc(100% / 5);
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        width: 100%;
+        gap: 20px;
+    }
+
+    table {
+        width: auto;
+    }
+
+    .separa-inputs-agendamento {
+        display: block;
+    }
+
+        .separa-inputs-agendamento div {
+            margin: 0;
+        }
+
+    .alinha-rbList {
+        margin: unset;
+    }
+
+    .alinha-buttons {
+        margin-right: 0px;
+    }
+
+    .inputs-separadas
+    {
+        display: block;
+    }
+}
+
+/*Adicionado*/
+@media screen and (max-width: 700px) {
+    #pnlAgendaInformacoes {
+        display: flex;
+        flex-direction: column;
+    }
+    .filtros-lista-horario {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: calc(100% / 3);
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        width: 100%;
+        gap: 15px;
+    }
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 450px) {
+    .sidebar a {
+        text-align: center;
+        float: none;
+    }
+
+    header {
+        height: 60px;
+        flex-direction: column;
+        height:fit-content;
+    }
+
+    .logo-container {
+        width: 35%;
+        margin: auto;
+    }
+
+    article {
+        width: 100%;
+        padding: 8px;
+        margin: unset;
+        margin-top: 15px;
+    }
+
+    .filtra input {
+        width: 280px;
+    }
+
+    table {
+        width: auto;
+        font-size: 13px;
+    }
+
+    .itens-flex {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    table thead th {
+        font-size: 14px;
+    }
+
+    table tbody td {
+        padding: 5px; /*padding-bottom: 5px;*/
+    }
+
+    /** DADOS_SERVICO_EXPANDIDO **/
+
+    .logo-form img {
+        width: 22vw
+    }
+
+    .dados-servico {
+        width: 100%;
+    }
+
+    .filtra .btnAdicionar {
+        display: unset;
+    }
+
+    .btnAdicionar-container {
+        display: none;
+    }
+
+    .filtros-lista {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: calc(100% / 3);
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        border-radius: 8px;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+        width: 100%;
+        margin-bottom: 5px;
+        gap: 0px;
+    }
+
+    .filtros-lista-horario {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: calc(100% / 3);
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+        width: 100%;
+        gap: 20px;
+    }
+
+    /** ADICIONAR **/
+
+    .inputs-separadas {
+        display: block;
+    }
+
+    .formAdicionar {
+        top: 18vh;
+        padding: 10px;
+    }
+
+    .logo-form img {
+        width: 15vw;
+    }
+    .divAgenda {
+        margin: auto;
+    }
+    #pnlAgendaInformacoes
+    {
+        display:flex;
+        flex-direction:column;
+    }
+
+    #tblAgendamento thead {
+        top: 60px;
+    }
+
+
+    /** DONA_SERVICO_EXPANDIDO **/
+
+    .pnlImagens {
+        width: 100%;
+    }
+
+        .pnlImagens img {
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+        }
+
+    /** DONA_FUCIONARIOS E DONA_FUNCIONARIO_EXPANDIDO**/
+
+    .itens-flex {
+        flex-direction: column;
+    }
+
+    .filtra {
+        width: 90%;
+    }
+
+        .filtra input {
+            width: 100%;
+        }
+
+    .clsLink {
+        clear: both;
+    }
+
+    .pnlImagens {
+        width: 50%;
+        height: 100%;
+    }
+
+    .separa-inputs-agendamento {
+        display: block;
+    }
+
+        .separa-inputs-agendamento div {
+            margin: unset;
+        }
+
+    .alinha-rbList {
+        margin: unset;
+    }
+
+    .alinha-buttons {
+        margin-right: 0px;
+    }
+    .inputs-separadas
+    {
+        display: block;
+    }
+
+}

@@ -1,0 +1,649 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F38BA514-584B-46A1-B77C-8C49341E3002}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>prjTCC</RootNamespace>
+    <AssemblyName>prjTCC</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=6.7.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.7.9\lib\net45\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="alterar_senha.aspx" />
+    <Content Include="avaliacao.aspx" />
+    <Content Include="cadastro.aspx" />
+    <Content Include="conta_cliente.aspx" />
+    <Content Include="css\estiloDona.css" />
+    <Content Include="dona_agenda.aspx" />
+    <Content Include="dona_agenda_antiga.aspx" />
+    <Content Include="confirmar_agendamento.aspx" />
+    <Content Include="dona_banner.aspx" />
+    <Content Include="dona_banner_adicionar.aspx" />
+    <Content Include="dona_funcionarios.aspx" />
+    <Content Include="dona_funcionario_adicionar.aspx" />
+    <Content Include="dona_funcionario_adicionar_horario_servico.aspx" />
+    <Content Include="dona_funcionario_atribuicao_servicos.aspx" />
+    <Content Include="dona_funcionario_expandido.aspx" />
+    <Content Include="dona_recompensas.aspx" />
+    <Content Include="dona_recompensa_adicionar.aspx" />
+    <Content Include="dona_recompensa_expandido.aspx" />
+    <Content Include="dona_servicos.aspx" />
+    <Content Include="dona_servico_adicionar.aspx" />
+    <Content Include="dona_servico_expandido.aspx" />
+    <Content Include="erro.aspx" />
+    <Content Include="esqueci_senha.aspx" />
+    <Content Include="estoque.aspx" />
+    <Content Include="funcionario_agenda.aspx" />
+    <Content Include="funcionario_editar.aspx" />
+    <Content Include="funcionario_visualizar_horario.aspx" />
+    <Content Include="imagens\erroListarCategoria.png" />
+    <Content Include="imagens\Premios\cupom.jpg" />
+    <Content Include="imagens\Premios\produto.jpg" />
+    <Content Include="imagens\semAgendamento.png" />
+    <Content Include="imagens\semAgendamentoCancelado.png" />
+    <Content Include="imagens\semAgendamentoConcluido.png" />
+    <Content Include="imagens\semAgendamentoEmAndamento.png" />
+    <Content Include="imagens\semCupomRecompensa.png" />
+    <Content Include="imagens\semPremio.png" />
+    <Content Include="imagens\semProdutosRecompensa.png" />
+    <Content Include="imagens\semRecompensa.png" />
+    <Content Include="imagens\Servicos\botox.jpg" />
+    <Content Include="imagens\Servicos\botox2.jpg" />
+    <Content Include="imagens\Servicos\cabelo-loiro-platinado-coloracao-tendencia-2023-683x1024.jpg" />
+    <Content Include="imagens\Servicos\coloracao.jpg" />
+    <Content Include="imagens\Servicos\coloracao2.jpg" />
+    <Content Include="imagens\Servicos\extensao_cilios.jpg" />
+    <Content Include="imagens\Servicos\extensao_cilios2.jpg" />
+    <Content Include="imagens\Servicos\lavagem_escova.jpg" />
+    <Content Include="imagens\Servicos\lavagem_escova2.jpg" />
+    <Content Include="imagens\Servicos\mechas2.jpg" />
+    <Content Include="imagens\Servicos\micropigmentacao_labial.jpg" />
+    <Content Include="imagens\Servicos\micropigmentacao_labial2.jpg" />
+    <Content Include="imagens\Servicos\micropigmentacao_labial3.jpg" />
+    <Content Include="imagens\Servicos\micropigmentacao_sobrancelha.jpg" />
+    <Content Include="imagens\Servicos\morena_iluminada.png" />
+    <Content Include="imagens\Servicos\nailart.jpg" />
+    <Content Include="imagens\Servicos\progressiva-comformol.jpg" />
+    <Content Include="imagens\Servicos\progressiva-comformol3.jpg" />
+    <Content Include="imagens\Servicos\progressiva-semformol2.jpg" />
+    <Content Include="js\ajustarTamanhoDivAgenda.js" />
+    <Content Include="js\estrelaAvaliacao.js" />
+    <Content Include="js\igualarTamanho.js" />
+    <Content Include="js\maxArquivo.js" />
+    <Content Include="js\mostrarBanner.js" />
+    <Content Include="js\mudaCorFiltro.js" />
+    <Content Include="js\previsualizarImagem.js" />
+    <Content Include="login_cookie.html" />
+    <Content Include="css\estilo.css" />
+    <Content Include="imagens\aspas.png" />
+    <Content Include="imagens\Ativo 1.png" />
+    <Content Include="imagens\Ativo 2.png" />
+    <Content Include="imagens\Ativo 3.png" />
+    <Content Include="imagens\Ativo 4.png" />
+    <Content Include="imagens\banner.jpg" />
+    <Content Include="imagens\Banners\banner2.jpg" />
+    <Content Include="imagens\buscar.png" />
+    <Content Include="imagens\Categorias\cilios.png" />
+    <Content Include="imagens\Categorias\corte.png" />
+    <Content Include="imagens\Categorias\labio.png" />
+    <Content Include="imagens\Categorias\sombrancelha.png" />
+    <Content Include="imagens\Categorias\unha.png" />
+    <Content Include="imagens\Servicos\cilios1.jpg" />
+    <Content Include="imagens\Servicos\cilios2.jpg" />
+    <Content Include="imagens\facebook.png" />
+    <Content Include="imagens\flecha_direita.png" />
+    <Content Include="imagens\fundo-bg.jpeg" />
+    <Content Include="imagens\fundo-bg.png" />
+    <Content Include="imagens\ia.jpg" />
+    <Content Include="imagens\instagram.png" />
+    <Content Include="imagens\labios.jpg" />
+    <Content Include="imagens\Funcionarios\leticia.jpg" />
+    <Content Include="imagens\logo.png" />
+    <Content Include="imagens\logotipo.png" />
+    <Content Include="imagens\logotipo_branco.png" />
+    <Content Include="imagens\logo_branco.png" />
+    <Content Include="imagens\Servicos\progressiva-semformol.jpg" />
+    <Content Include="imagens\Servicos\progressiva.jpg" />
+    <Content Include="imagens\recompensa-produto1.png" />
+    <Content Include="imagens\recompensa-produto2.png" />
+    <Content Include="imagens\relogio.png" />
+    <Content Include="imagens\Funcionarios\stefany.jpg" />
+    <Content Include="imagens\twitter.png" />
+    <Content Include="imagens\user.png" />
+    <Content Include="imagens\wpp.png" />
+    <Content Include="imagens\x.png" />
+    <Content Include="index.aspx" />
+    <Content Include="js\agendamento.js" />
+    <Content Include="js\agendamento_original.js" />
+    <Content Include="js\animarAgendamentoServico.js" />
+    <Content Include="js\carrosselImagens.js" />
+    <Content Include="js\carrosselServico.js" />
+    <Content Include="js\cookieLogin.js" />
+    <Content Include="js\menu_sanduiche.js" />
+    <Content Include="login.aspx" />
+    <Content Include="logout.aspx" />
+    <Content Include="minha_conta_agendamentos.aspx" />
+    <Content Include="minha_conta_agendamentos_expandido.aspx" />
+    <Content Include="minha_conta_recompensas.aspx" />
+    <Content Include="produto_adicionar.aspx" />
+    <Content Include="produto_expandido.aspx" />
+    <Content Include="ra_agendar.aspx" />
+    <Content Include="ra_banner.aspx" />
+    <Content Include="ra_cupom.aspx" />
+    <Content Include="ra_dados_minimos.aspx" />
+    <Content Include="ra_listar_horarios.aspx" />
+    <Content Include="ra_verificar_login.aspx" />
+    <Content Include="recompensas.aspx" />
+    <Content Include="recompensa_resgatar.aspx" />
+    <Content Include="dona_resgate_recompensa.aspx" />
+    <Content Include="servicos.aspx" />
+    <Content Include="servico_expandido.aspx" />
+    <Content Include="agendamento_servico.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="alterar_senha.aspx.cs">
+      <DependentUpon>alterar_senha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="alterar_senha.aspx.designer.cs">
+      <DependentUpon>alterar_senha.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="avaliacao.aspx.cs">
+      <DependentUpon>avaliacao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="avaliacao.aspx.designer.cs">
+      <DependentUpon>avaliacao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cadastro.aspx.cs">
+      <DependentUpon>cadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cadastro.aspx.designer.cs">
+      <DependentUpon>cadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Classe\Banner.cs" />
+    <Compile Include="dona_agenda.aspx.cs">
+      <DependentUpon>dona_agenda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dona_agenda.aspx.designer.cs">
+      <DependentUpon>dona_agenda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dona_recompensa_adicionar.aspx.cs">
+      <DependentUpon>dona_recompensa_adicionar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dona_recompensa_adicionar.aspx.designer.cs">
+      <DependentUpon>dona_recompensa_adicionar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="estoque.aspx.cs">
+      <DependentUpon>estoque.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="estoque.aspx.designer.cs">
+      <DependentUpon>estoque.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="funcionario_visualizar_horario.aspx.cs">
+      <DependentUpon>funcionario_visualizar_horario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="funcionario_visualizar_horario.aspx.designer.cs">
+      <DependentUpon>funcionario_visualizar_horario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lógica\adicaoRecompensa.cs" />
+    <Compile Include="Lógica\adicionarBanner.cs" />
+    <Compile Include="Lógica\adicionarProduto.cs" />
+    <Compile Include="Lógica\DeletarBanner.cs" />
+    <Compile Include="dona_banner.aspx.cs">
+      <DependentUpon>dona_banner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dona_banner.aspx.designer.cs">
+      <DependentUpon>dona_banner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dona_banner_adicionar.aspx.cs">
+      <DependentUpon>dona_banner_adicionar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dona_banner_adicionar.aspx.designer.cs">
+      <DependentUpon>dona_banner_adicionar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dona_recompensas.aspx.cs">
+      <DependentUpon>dona_recompensas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dona_recompensas.aspx.designer.cs">
+      <DependentUpon>dona_recompensas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dona_recompensa_expandido.aspx.cs">
+      <DependentUpon>dona_recompensa_expandido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dona_recompensa_expandido.aspx.designer.cs">
+      <DependentUpon>dona_recompensa_expandido.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lógica\adcionarServico.cs" />
+    <Compile Include="Classe\Agendamento.cs" />
+    <Compile Include="Classe\Banco.cs" />
+    <Compile Include="Classe\Categoria.cs" />
+    <Compile Include="Classe\Cliente.cs" />
+    <Compile Include="Classe\Conexao.cs" />
+    <Compile Include="Classe\Cupom.cs" />
+    <Compile Include="Classe\TipoFuncionario.cs" />
+    <Compile Include="Classe\Token.cs" />
+    <Compile Include="conta_cliente.aspx.cs">
+      <DependentUpon>conta_cliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="conta_cliente.aspx.designer.cs">
+      <DependentUpon>conta_cliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dona_agenda_antiga.aspx.cs">
+      <DependentUpon>dona_agenda_antiga.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dona_agenda_antiga.aspx.designer.cs">
+      <DependentUpon>dona_agenda_antiga.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="confirmar_agendamento.aspx.cs">
+      <DependentUpon>confirmar_agendamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="confirmar_agendamento.aspx.designer.cs">
+      <DependentUpon>confirmar_agendamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dona_funcionarios.aspx.cs">
+      <DependentUpon>dona_funcionarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dona_funcionarios.aspx.designer.cs">
+      <DependentUpon>dona_funcionarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dona_funcionario_adicionar.aspx.cs">
+      <DependentUpon>dona_funcionario_adicionar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dona_funcionario_adicionar.aspx.designer.cs">
+      <DependentUpon>dona_funcionario_adicionar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dona_funcionario_adicionar_horario_servico.aspx.cs">
+      <DependentUpon>dona_funcionario_adicionar_horario_servico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dona_funcionario_adicionar_horario_servico.aspx.designer.cs">
+      <DependentUpon>dona_funcionario_adicionar_horario_servico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dona_funcionario_atribuicao_servicos.aspx.cs">
+      <DependentUpon>dona_funcionario_atribuicao_servicos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dona_funcionario_atribuicao_servicos.aspx.designer.cs">
+      <DependentUpon>dona_funcionario_atribuicao_servicos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dona_funcionario_expandido.aspx.cs">
+      <DependentUpon>dona_funcionario_expandido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dona_funcionario_expandido.aspx.designer.cs">
+      <DependentUpon>dona_funcionario_expandido.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dona_servicos.aspx.cs">
+      <DependentUpon>dona_servicos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dona_servicos.aspx.designer.cs">
+      <DependentUpon>dona_servicos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dona_servico_adicionar.aspx.cs">
+      <DependentUpon>dona_servico_adicionar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dona_servico_adicionar.aspx.designer.cs">
+      <DependentUpon>dona_servico_adicionar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dona_servico_expandido.aspx.cs">
+      <DependentUpon>dona_servico_expandido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dona_servico_expandido.aspx.designer.cs">
+      <DependentUpon>dona_servico_expandido.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="erro.aspx.cs">
+      <DependentUpon>erro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="erro.aspx.designer.cs">
+      <DependentUpon>erro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="esqueci_senha.aspx.cs">
+      <DependentUpon>esqueci_senha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="esqueci_senha.aspx.designer.cs">
+      <DependentUpon>esqueci_senha.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="funcionario_agenda.aspx.cs">
+      <DependentUpon>funcionario_agenda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="funcionario_agenda.aspx.designer.cs">
+      <DependentUpon>funcionario_agenda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="funcionario_editar.aspx.cs">
+      <DependentUpon>funcionario_editar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="funcionario_editar.aspx.designer.cs">
+      <DependentUpon>funcionario_editar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lógica\adicionarFuncionario.cs" />
+    <Compile Include="Lógica\AdicionarImagem.cs" />
+    <Compile Include="Lógica\AlteracaoDosDadosDoCliente.cs" />
+    <Compile Include="Lógica\AtribuicaoServicoFuncionario.cs" />
+    <Compile Include="Lógica\AvaliacaoServico.cs" />
+    <Compile Include="Lógica\CancelaAgendamento.cs" />
+    <Compile Include="Lógica\ConfirmaAgendamento.cs" />
+    <Compile Include="Lógica\DadosAgendamentoEspecifico.cs" />
+    <Compile Include="Lógica\DadosMinimosPremioEspecifico.cs" />
+    <Compile Include="Classe\Depoimento.cs" />
+    <Compile Include="Classe\DiaDeTrabalho.cs" />
+    <Compile Include="Classe\Funcionario.cs" />
+    <Compile Include="Classe\FuncionarioServicoDiaDeTrabalho.cs" />
+    <Compile Include="Classe\Imagem.cs" />
+    <Compile Include="Classe\Parametro.cs" />
+    <Compile Include="Classe\Premio.cs" />
+    <Compile Include="Classe\Produto.cs" />
+    <Compile Include="Classe\Servico.cs" />
+    <Compile Include="Classe\Temporada.cs" />
+    <Compile Include="Classe\TipoPremio.cs" />
+    <Compile Include="Classe\TipoProduto.cs" />
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lógica\EdicaoDona.cs" />
+    <Compile Include="Lógica\EnviarCodigoVerificao.cs" />
+    <Compile Include="Lógica\FiltrosDona.cs" />
+    <Compile Include="Lógica\FuncionarioEdicao.cs" />
+    <Compile Include="Lógica\ListaAgendamentosPorDia.cs" />
+    <Compile Include="Lógica\ListaAgendamentosPorSemana.cs" />
+    <Compile Include="Lógica\ListaNomeECodigoFuncionario.cs" />
+    <Compile Include="Lógica\ListarCategoriaCmb.cs" />
+    <Compile Include="Lógica\ListarDias.cs" />
+    <Compile Include="Lógica\ListarTodosServicos.cs" />
+    <Compile Include="Lógica\ListasDona.cs" />
+    <Compile Include="Lógica\ListaTipoPremio.cs" />
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lógica\Agendar.cs" />
+    <Compile Include="Lógica\CadastraCliente.cs" />
+    <Compile Include="Lógica\DadosMinimosServicoEspecifico.cs" />
+    <Compile Include="Lógica\FazerLogin.cs" />
+    <Compile Include="Lógica\listaAgendamentos.cs" />
+    <Compile Include="Lógica\ListaCupom.cs" />
+    <Compile Include="Lógica\ListaDepoimentoServico.cs" />
+    <Compile Include="Lógica\ListaFuncionarioServicoPorFiltro.cs" />
+    <Compile Include="Lógica\ListaPremio.cs" />
+    <Compile Include="Lógica\ListarHorarioFuncionario.cs" />
+    <Compile Include="Lógica\ManipulacaoImagemFuncionario.cs" />
+    <Compile Include="Lógica\ManipulacaoImagemRecompensa.cs" />
+    <Compile Include="Lógica\ManipulacaoImagemServico.cs" />
+    <Compile Include="Lógica\PegarPontuacaoCliente.cs" />
+    <Compile Include="Lógica\RecompensaCliente.cs" />
+    <Compile Include="Lógica\ResgatarPremio.cs" />
+    <Compile Include="Lógica\ResgateRecompensa.cs" />
+    <Compile Include="Lógica\SalvarToken.cs" />
+    <Compile Include="Lógica\ServicoEspecifico.cs" />
+    <Compile Include="Lógica\ListaServicoPorCategoria.cs" />
+    <Compile Include="Lógica\ListaCategoria.cs" />
+    <Compile Include="Lógica\ListaDepoimentoPopular.cs" />
+    <Compile Include="Lógica\VerificarContaExistente.cs" />
+    <Compile Include="Lógica\VerificarExistenciaToken.cs" />
+    <Compile Include="minha_conta_agendamentos.aspx.cs">
+      <DependentUpon>minha_conta_agendamentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="minha_conta_agendamentos.aspx.designer.cs">
+      <DependentUpon>minha_conta_agendamentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="minha_conta_agendamentos_expandido.aspx.cs">
+      <DependentUpon>minha_conta_agendamentos_expandido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="minha_conta_agendamentos_expandido.aspx.designer.cs">
+      <DependentUpon>minha_conta_agendamentos_expandido.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="minha_conta_recompensas.aspx.cs">
+      <DependentUpon>minha_conta_recompensas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="minha_conta_recompensas.aspx.designer.cs">
+      <DependentUpon>minha_conta_recompensas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="produto_adicionar.aspx.cs">
+      <DependentUpon>produto_adicionar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="produto_adicionar.aspx.designer.cs">
+      <DependentUpon>produto_adicionar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="produto_expandido.aspx.cs">
+      <DependentUpon>produto_expandido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="produto_expandido.aspx.designer.cs">
+      <DependentUpon>produto_expandido.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ra_agendar.aspx.cs">
+      <DependentUpon>ra_agendar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ra_agendar.aspx.designer.cs">
+      <DependentUpon>ra_agendar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ra_banner.aspx.cs">
+      <DependentUpon>ra_banner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ra_banner.aspx.designer.cs">
+      <DependentUpon>ra_banner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ra_cupom.aspx.cs">
+      <DependentUpon>ra_cupom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ra_cupom.aspx.designer.cs">
+      <DependentUpon>ra_cupom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ra_dados_minimos.aspx.cs">
+      <DependentUpon>ra_dados_minimos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ra_dados_minimos.aspx.designer.cs">
+      <DependentUpon>ra_dados_minimos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ra_listar_horarios.aspx.cs">
+      <DependentUpon>ra_listar_horarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ra_listar_horarios.aspx.designer.cs">
+      <DependentUpon>ra_listar_horarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ra_verificar_login.aspx.cs">
+      <DependentUpon>ra_verificar_login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ra_verificar_login.aspx.designer.cs">
+      <DependentUpon>ra_verificar_login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="recompensas.aspx.cs">
+      <DependentUpon>recompensas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="recompensas.aspx.designer.cs">
+      <DependentUpon>recompensas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="recompensa_resgatar.aspx.cs">
+      <DependentUpon>recompensa_resgatar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="recompensa_resgatar.aspx.designer.cs">
+      <DependentUpon>recompensa_resgatar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dona_resgate_recompensa.aspx.cs">
+      <DependentUpon>dona_resgate_recompensa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dona_resgate_recompensa.aspx.designer.cs">
+      <DependentUpon>dona_resgate_recompensa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="servicos.aspx.cs">
+      <DependentUpon>servicos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="servicos.aspx.designer.cs">
+      <DependentUpon>servicos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="servico_expandido.aspx.cs">
+      <DependentUpon>servico_expandido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="servico_expandido.aspx.designer.cs">
+      <DependentUpon>servico_expandido.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="imagens\Servicos\mechas.jpg" />
+    <Content Include="imagens\Servicos\mechas_iluminadas.jpg" />
+    <Content Include="imagens\Servicos\morena_iluminada2.jpg" />
+    <Content Include="imagens\Servicos\nailart2.jpg" />
+    <Content Include="imagens\Servicos\progressiva-comformol2.jpg" />
+    <Content Include="imagens\Servicos\unhaAcrigel.jpg" />
+    <Content Include="imagens\Servicos\unhas_acrilicas.jpg" />
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50804</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50804/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este projeto faz referência a pacotes do NuGet que não estão presentes neste computador. Use a Restauração de Pacotes do NuGet para baixá-los.  Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkID=322105. O arquivo ausente é {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
